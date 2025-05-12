@@ -18,7 +18,8 @@ def create_figure(data):
         y="Valor", 
         title="Valores por Categoria",
         color="Categoria",  # Adiciona cores para cada categoria
-        labels={"Valor": "Quantidade", "Categoria": "Tipo"}  # Renomeia os rótulos
+        labels={"Valor": "Quantidade", "Categoria": "Tipo"},  # Renomeia os rótulos
+        template="plotly_white"  # Aplica um tema ao gráfico
     )
 
 # Obtendo os dados e criando o gráfico
@@ -31,7 +32,7 @@ app = dash.Dash(__name__)
 # Definindo o layout da aplicação com estilo
 app.layout = html.Div([
     html.Div([
-        html.H1("Dashboard de Análise", style={"textAlign": "center"})
+        html.H1("Dashboard de Análise", style={"textAlign": "center", "color": "#333"})
     ], style={"padding": "20px", "backgroundColor": "#f4f4f4"}),  # Estilo do cabeçalho
     html.Div([
         dcc.Graph(figure=fig)
